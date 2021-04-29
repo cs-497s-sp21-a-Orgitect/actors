@@ -1,5 +1,12 @@
 # Yidan Gong
 
+# Building docker container:
+
+```
+docker-compose up -d --build
+docker-compose up
+```
+docker-compose up --build
 # Developing environment:
 ```
 pip install virtualenv or pip install venv
@@ -18,10 +25,7 @@ deactivate
 ```
 * API information can be checked at http://localhost:8000/docs
 
-# API:
-https://app.swaggerhub.com/apis/gydddd/fast-api/0.1.0
-
 # Database:
-* The graph below shows the current structure of actor table. It will use http requests to retrieve information of each stage id in sid.
 
+* This service have its own database. It will use http requests to retrieve stage id.
 

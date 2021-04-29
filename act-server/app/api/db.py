@@ -5,10 +5,11 @@ from sqlalchemy import (Column, Integer, MetaData, String, Table,
 
 from databases import Database
 
-DATABASE_URL ='postgresql://gyd:secret@localhost/postgres'
 #DATABASE_URL = 'postgresql://localhost:5432/postgres'
 
-engine = create_engine(DATABASE_URL)
+DATABASE_URI = os.getenv('DATABASE_URI')
+#DATABASE_URI='postgresql://postgres:postgres@db:5432/postgres'
+engine = create_engine(DATABASE_URI)
 
 metadata = MetaData()
 
@@ -23,5 +24,4 @@ actor = Table(
     Column('sid',ARRAY(Integer))
 )
 
-
-database = Database(DATABASE_URL)
+database = Database(DATABASE_URI)
